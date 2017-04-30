@@ -18,7 +18,7 @@ build:
 
 requirements:
   build:
-    - toolchain     # [unix]
+    - toolchain 2.0.0    # [unix]
     - cmake
     - gmp           # [unix]
     - mpfr          # [unix]
