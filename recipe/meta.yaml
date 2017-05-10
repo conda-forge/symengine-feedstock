@@ -1,39 +1,37 @@
-{% set version = "0.2.0" %}
-{% set commit = "v0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: symengine
   version: {{ version }}
 
 source:
-  fn: {{ commit }}.tar.gz
-  url: https://github.com/symengine/symengine/archive/{{ commit }}.tar.gz
-  sha256: 64d050b0b9decd12bf4ea3b7d18d3904dd7cb8baaae9fbac1b8068e3c59709be
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/symengine/symengine/archive/v{{ version }}.tar.gz
+  sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
 
 build:
-  number: 1
-  skip: true        # [win and not py35]
+  number: 0
+  msvc_compiler: 14.0
   features:
-    - vc14          # [win and py35]
+    - vc14             # [win]
 
 requirements:
   build:
-    - toolchain     # [unix]
+    - toolchain
     - cmake
-    - gmp           # [unix]
-    - mpfr          # [unix]
-    - mpc           # [unix]
-    - mpir          # [win]
-    - python        # [win]
+    - gmp >=5.0.1,<7   # [unix]
+    - mpfr 3.*         # [unix]
+    - mpc 1.*          # [unix]
+    - mpir 3.*         # [win]
+    - vc 14            # [win]
   run:
-    - gmp           # [unix]
-    - mpfr          # [unix]
-    - mpc           # [unix]
-    - mpir          # [win]
+    - gmp >=5.0.1,<7   # [unix]
+    - mpfr 3.*         # [unix]
+    - mpc 1.*          # [unix]
+    - mpir 3.*         # [win]
+    - vc 14            # [win]
 
 test:
-  requires:
-    - python 3.5.*  # [win and py35]
   commands:
     - if not exist %LIBRARY_INC%\\symengine\\basic.h exit 1     # [win]
     - if not exist %LIBRARY_LIB%\\symengine.lib exit 1          # [win]

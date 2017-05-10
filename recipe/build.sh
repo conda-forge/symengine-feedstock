@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source activate "${CONDA_DEFAULT_ENV}"
-
 mkdir build
 cd build
 
