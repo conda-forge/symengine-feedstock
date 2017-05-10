@@ -1,14 +1,13 @@
-{% set version = "0.2.0" %}
-{% set commit = "v0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: symengine
   version: {{ version }}
 
 source:
-  fn: {{ commit }}.tar.gz
-  url: https://github.com/symengine/symengine/archive/{{ commit }}.tar.gz
-  sha256: 64d050b0b9decd12bf4ea3b7d18d3904dd7cb8baaae9fbac1b8068e3c59709be
+  fn: v{{ version }}.tar.gz
+  url: https://github.com/symengine/symengine/archive/v{{ version }}.tar.gz
+  sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
 
 build:
   number: 0
@@ -18,7 +17,7 @@ build:
 
 requirements:
   build:
-    - toolchain        # [unix]
+    - toolchain
     - cmake
     - gmp >=5.0.1,<7   # [unix]
     - mpfr 3.*         # [unix]
