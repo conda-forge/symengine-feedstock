@@ -20,14 +20,15 @@ requirements:
     - toolchain
     - cmake
     - gmp >=5.0.1,<7   # [unix]
-    - mpfr 3.*         # [unix]
-    - mpc 1.*          # [unix]
+    - mpfr 3.*
+    - mpc 1.*
     - mpir 3.*         # [win]
     - vc 14            # [win]
+    - ccache-toolchain
   run:
     - gmp >=5.0.1,<7   # [unix]
-    - mpfr 3.*         # [unix]
-    - mpc 1.*          # [unix]
+    - mpfr 3.*
+    - mpc 1.*
     - mpir 3.*         # [win]
     - vc 14            # [win]
 
