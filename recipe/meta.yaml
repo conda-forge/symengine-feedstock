@@ -10,7 +10,7 @@ source:
   sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
 
 build:
-  number: 0
+  number: 1
   msvc_compiler: 14.0
   features:
     - vc14             # [win]
@@ -20,14 +20,15 @@ requirements:
     - toolchain
     - cmake
     - gmp >=5.0.1,<7   # [unix]
-    - mpfr 3.*         # [unix]
-    - mpc 1.*          # [unix]
+    - mpfr 3.*
+    - mpc 1.*
     - mpir 3.*         # [win]
     - vc 14            # [win]
+    - ccache-toolchain
   run:
     - gmp >=5.0.1,<7   # [unix]
-    - mpfr 3.*         # [unix]
-    - mpc 1.*          # [unix]
+    - mpfr 3.*
+    - mpc 1.*
     - mpir 3.*         # [win]
     - vc 14            # [win]
 
