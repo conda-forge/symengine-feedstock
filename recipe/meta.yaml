@@ -10,6 +10,7 @@ source:
   sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
 
 build:
+  noarch: python
   number: 1
   msvc_compiler: 14.0
   features:
