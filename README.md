@@ -14,14 +14,16 @@ Summary: SymEngine is a fast symbolic manipulation library, written in C++
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/symengine-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/symengine-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/symengine-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/symengine-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/symengine-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/symengine-feedstock/branch/master)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/symengine-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/symengine-feedstock/branch/master)
+![Linux disabled](https://img.shields.io/badge/linux-disabled-lightgrey.svg)
+![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/symengine/badges/version.svg)](https://anaconda.org/conda-forge/symengine)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/symengine/badges/downloads.svg)](https://anaconda.org/conda-forge/symengine)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-symengine-green.svg)](https://anaconda.org/conda-forge/symengine) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/symengine.svg)](https://anaconda.org/conda-forge/symengine) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/symengine.svg)](https://anaconda.org/conda-forge/symengine) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/symengine.svg)](https://anaconda.org/conda-forge/symengine) |
 
 Installing symengine
 ====================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
