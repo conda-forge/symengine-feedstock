@@ -14,9 +14,9 @@ Summary: SymEngine is a fast symbolic manipulation library, written in C++
 Current build status
 ====================
 
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/symengine-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/symengine-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/symengine-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/symengine-feedstock)
 [![Windows](https://img.shields.io/appveyor/ci/conda-forge/symengine-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/symengine-feedstock/branch/master)
-![Linux disabled](https://img.shields.io/badge/linux-disabled-lightgrey.svg)
-![OSX disabled](https://img.shields.io/badge/OSX-disabled-lightgrey.svg)
 
 Current release info
 ====================
