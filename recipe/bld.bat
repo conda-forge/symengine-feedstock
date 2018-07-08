@@ -1,6 +1,8 @@
 mkdir build
 cd build
 
+set "CXXFLAGS="
+
 cmake ^
     -G "%CMAKE_GENERATOR%" ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
