@@ -12,6 +12,7 @@ cmake ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DBUILD_FOR_DISTRIBUTION=yes ^
     -DBUILD_SHARED_LIBS=yes ^
+    -DMSVC_USE_MT=no ^
     ..
 
 cmake --build . --config Release
