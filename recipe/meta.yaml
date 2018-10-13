@@ -23,12 +23,11 @@ requirements:
     - mpfr
     - mpc 1.*
     - mpir 3.*         # [win]
-    - ccache-toolchain
   run:
     - gmp              # [unix]
     - mpfr
-    - mpc 1.*
-    - mpir 3.*         # [win]
+    - {{ pin_compatible("mpc") }}
+    - {{ pin_compatible("mpir") }}         # [win]
 
 test:
   commands:
