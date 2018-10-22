@@ -8,9 +8,11 @@ source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/symengine/symengine/archive/v{{ version }}.tar.gz
   sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
+  patches:
+    - gcc7.patch
 
 build:
-  number: 2
+  number: 1003
   skip: True  # [win and vc<14]
 
 requirements:
@@ -23,12 +25,11 @@ requirements:
     - mpfr
     - mpc 1.*
     - mpir 3.*         # [win]
-    - ccache-toolchain
   run:
     - gmp              # [unix]
     - mpfr
-    - mpc 1.*
-    - mpir 3.*         # [win]
+    - {{ pin_compatible("mpc") }}
+    - {{ pin_compatible("mpir") }}         # [win]
 
 test:
   commands:
