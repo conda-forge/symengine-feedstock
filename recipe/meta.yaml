@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: symengine
@@ -6,30 +6,32 @@ package:
 
 source:
   fn: v{{ version }}.tar.gz
-  url: https://github.com/symengine/symengine/archive/v{{ version }}.tar.gz
-  sha256: 591463cb9e741d59f6dfd39a7943e3865d3afe9eac47d1a9cbf5ca74b9c49476
-  patches:
-    - gcc7.patch
+  url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
+  sha256: dd755901a9e2a49e53ba3bbe3f565f94265af05299e57a7b592186dd35916a1b
 
 build:
-  number: 1003
+  number: 0
   skip: True  # [win and vc<14]
 
 requirements:
   build:
     - cmake
+    - make
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - gmp              # [unix]
     - mpfr
-    - mpc 1.*
-    - mpir 3.*         # [win]
+    - mpc
+    - mpir             # [win]
+    - llvmdev
+    - libflint         # [unix]
   run:
     - gmp              # [unix]
     - mpfr
     - {{ pin_compatible("mpc") }}
     - {{ pin_compatible("mpir") }}         # [win]
+    - {{ pin_compatible("libflint") }}     # [unix]
 
 test:
   commands:
