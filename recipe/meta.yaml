@@ -6,10 +6,8 @@ package:
 
 source:
   fn: v{{ version }}.tar.gz
-  url: https://github.com/symengine/symengine/archive/v{{ version }}.tar.gz
+  url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
   sha256: dd755901a9e2a49e53ba3bbe3f565f94265af05299e57a7b592186dd35916a1b
-  patches:
-    - gcc7.patch
 
 build:
   number: 0
@@ -23,13 +21,16 @@ requirements:
   host:
     - gmp              # [unix]
     - mpfr
-    - mpc 1.*
+    - mpc
     - mpir 3.*         # [win]
+    - llvmdev
+    - libflint         # [unix]
   run:
     - gmp              # [unix]
     - mpfr
     - {{ pin_compatible("mpc") }}
     - {{ pin_compatible("mpir") }}         # [win]
+    - {{ pin_compatible("libflint") }}     # [unix]
 
 test:
   commands:
