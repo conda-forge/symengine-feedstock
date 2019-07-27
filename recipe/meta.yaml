@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: symengine
@@ -7,7 +7,7 @@ package:
 source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
-  sha256: dd755901a9e2a49e53ba3bbe3f565f94265af05299e57a7b592186dd35916a1b
+  sha256: 4bbb17c82c9f8d9ab7a65ae011ac236c7aaf1e01f3331efdb787e95986c016b3
 
 build:
   number: 0
@@ -16,7 +16,8 @@ build:
 requirements:
   build:
     - cmake
-    - make
+    - make             # [unix]
+    - ninja            # [win]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
