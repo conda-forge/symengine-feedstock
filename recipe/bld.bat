@@ -4,7 +4,7 @@ cd build
 set "CXXFLAGS="
 
 cmake ^
-    -G "%CMAKE_GENERATOR%" ^
+    -G "Ninja" ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
@@ -18,7 +18,7 @@ cmake ^
     -DMSVC_USE_MT=no ^
     ..
 
-cmake --build . --config Release
+cmake --build . --config Release -- -j${CPU_COUNT}
 cmake --build . --config Release --target install
 
 ctest
