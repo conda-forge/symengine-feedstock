@@ -19,8 +19,9 @@ requirements:
     - cmake
     - make             # [unix]
     - ninja            # [win]
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}     # [unix]
+    - {{ compiler('cxx') }}   # [unix]
+    - vs2017_{{ target_platform }}   # [win]
   host:
     - gmp              # [unix]
     - mpfr
