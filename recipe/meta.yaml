@@ -19,15 +19,15 @@ requirements:
     - cmake
     - make             # [unix]
     - ninja            # [win]
-    - {{ compiler('c') }}     # [unix]
-    - {{ compiler('cxx') }}   # [unix]
-    - vs2017_{{ target_platform }}   # [win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - gmp              # [unix]
     - mpfr
     - mpc
     - mpir             # [win]
-    - llvmdev
+    - llvmdev          # [unix]
+    - llvmdev  8.*     # [win]
     - libflint         # [unix]
   run:
     - gmp              # [unix]
