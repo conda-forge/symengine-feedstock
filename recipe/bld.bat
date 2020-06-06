@@ -9,7 +9,7 @@ cmake ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DBUILD_BENCHMARKS=no ^
-    -DINTEGER_CLASS=gmp ^
+    -DINTEGER_CLASS=flint ^
     -DWITH_MPC=yes ^
     -DWITH_LLVM=yes ^
     -DWITH_SYMENGINE_THREAD_SAFE=yes ^
