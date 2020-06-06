@@ -23,18 +23,18 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - gmp              # [unix]
+    - mpir             # [win]
     - mpfr
     - mpc
-    - mpir             # [win]
-    - llvmdev          # [unix]
+    - llvmdev  9.*     # [unix]
     - llvmdev  8.*     # [win]
-    - libflint         # [unix]
+    - libflint
   run:
     - gmp              # [unix]
+    - mpir             # [win]
     - mpfr
-    - {{ pin_compatible("mpc") }}
-    - {{ pin_compatible("mpir") }}         # [win]
-    - {{ pin_compatible("libflint") }}     # [unix]
+    - mpc
+    - libflint
 
 test:
   commands:
