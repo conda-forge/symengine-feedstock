@@ -12,6 +12,7 @@ cmake ^
     -DINTEGER_CLASS=flint ^
     -DWITH_MPC=yes ^
     -DWITH_LLVM=yes ^
+    -DWITH_COTIRE=no ^
     -DWITH_SYMENGINE_THREAD_SAFE=yes ^
     -DBUILD_FOR_DISTRIBUTION=yes ^
     -DBUILD_SHARED_LIBS=yes ^
