@@ -26,8 +26,7 @@ requirements:
     - mpir             # [win]
     - mpfr
     - mpc
-    - llvmdev  9.*     # [unix]
-    - llvmdev  8.*     # [win]
+    - llvmdev
     - libflint
   run:
     - gmp              # [unix]
