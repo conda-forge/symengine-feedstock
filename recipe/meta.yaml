@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 {% set maj_min = ".".join(version.split(".")[:2]) %}
 
 package:
@@ -8,11 +8,11 @@ package:
 source:
   fn: v{{ version }}.tar.gz
   url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
-  sha256: 4d2caa86c03eaaa8ed004084d02f87b5c51b6229f8ba70d161227e22d6302f0a
+  sha256: 8b865bb72b71539d9cd2488a0468c6c3ea90cc606062a7880c3ff5af6abd74b1
 
 build:
-  number: 1
-  skip: True  # [win and vc<14]
+  number: 0
+  skip: true  # [win and vc<14]
 
 requirements:
   build:
@@ -49,7 +49,7 @@ about:
   home: https://github.com/symengine/symengine
   license: MIT
   license_file: LICENSE
-  summary: 'SymEngine is a fast symbolic manipulation library, written in C++'
+  summary: SymEngine is a fast symbolic manipulation library, written in C++
 
 extra:
   recipe-maintainers:
