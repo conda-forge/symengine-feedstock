@@ -3,7 +3,7 @@
 mkdir build
 cd build
 
-cmake \
+cmake ${CMAKE_ARGS} \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
@@ -21,4 +21,6 @@ cmake \
 cmake --build . -- -j${CPU_COUNT}
 cmake --build . --target install
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 ctest
+fi
