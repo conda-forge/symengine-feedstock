@@ -11,7 +11,7 @@ source:
   sha256: 8b865bb72b71539d9cd2488a0468c6c3ea90cc606062a7880c3ff5af6abd74b1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -27,6 +27,7 @@ requirements:
     - mpfr
     - mpc
     - llvmdev
+    - zlib
     - libflint
   run:
     - gmp              # [unix]
