@@ -1,5 +1,5 @@
 diff --git a/symengine/prime_sieve.cpp b/symengine/prime_sieve.cpp
-index 97ed4837..222dfedc 100644
+index 97ed4837..23f6f7ab 100644
 --- a/symengine/prime_sieve.cpp
 +++ b/symengine/prime_sieve.cpp
 @@ -1,6 +1,7 @@
@@ -19,7 +19,7 @@ index 97ed4837..222dfedc 100644
 -             ++index) {
 +
 +        // clang-format off
-+        for (unsigned index = 1; index < _primes.size() and _primes[index] * _primes[index] <= finish; ++index) {
++        for (unsigned index = 1; (index < _primes.size()) && (_primes[index] * _primes[index] <= finish); ++index) {
 +            // clang-format on
              unsigned n = _primes[index];
              unsigned multiple = (start / n + 1) * n;
@@ -35,92 +35,3 @@ index afa1f115..af23b3e8 100644
  #include <symengine/printers/stringbox.h>
  
  namespace SymEngine
-diff --git a/symengine/sets.h b/symengine/sets.h
-index 71e61d5e..3a2e63ac 100644
---- a/symengine/sets.h
-+++ b/symengine/sets.h
-@@ -68,7 +68,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-@@ -101,7 +101,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-@@ -212,7 +212,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-@@ -241,7 +241,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-@@ -270,7 +270,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-@@ -299,7 +299,7 @@ public:
-     }
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- 
-     virtual RCP<const Set> set_intersection(const RCP<const Set> &o) const;
-     virtual RCP<const Set> set_union(const RCP<const Set> &o) const;
-diff --git a/symengine/symengine_rcp.h b/symengine/symengine_rcp.h
-index c49720ab..5ad4250c 100644
---- a/symengine/symengine_rcp.h
-+++ b/symengine/symengine_rcp.h
-@@ -360,11 +360,11 @@ private:
- #endif
- 
-     template <typename T_, typename... Args>
--    friend inline RCP<T_> make_rcp(Args &&...args);
-+    friend inline RCP<T_> make_rcp(Args &&... args);
- };
- 
- template <typename T, typename... Args>
--inline RCP<T> make_rcp(Args &&...args)
-+inline RCP<T> make_rcp(Args &&... args)
- {
- #if defined(WITH_SYMENGINE_RCP)
-     return rcp(new T(std::forward<Args>(args)...));
-diff --git a/symengine/visitor.h b/symengine/visitor.h
-index dbabbf65..220de621 100644
---- a/symengine/visitor.h
-+++ b/symengine/visitor.h
-@@ -54,7 +54,7 @@ public:
-     template <typename... Args,
-               typename
-               = enable_if_t<std::is_constructible<Base, Args...>::value>>
--    BaseVisitor(Args &&...args) : Base(std::forward<Args>(args)...)
-+    BaseVisitor(Args &&... args) : Base(std::forward<Args>(args)...)
-     {
-     }
- 
