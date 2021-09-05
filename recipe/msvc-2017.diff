@@ -1,29 +1,16 @@
 diff --git a/symengine/prime_sieve.cpp b/symengine/prime_sieve.cpp
-index 97ed4837..23f6f7ab 100644
+index 97ed4837..d04910c5 100644
 --- a/symengine/prime_sieve.cpp
 +++ b/symengine/prime_sieve.cpp
-@@ -1,6 +1,7 @@
+@@ -1,6 +1,8 @@
  #include <symengine/prime_sieve.h>
++#include <ciso646>
  #include <cmath>
  #include <valarray>
 +#include <algorithm>
  
  namespace SymEngine
  {
-@@ -51,9 +52,10 @@ void Sieve::_extend(unsigned limit)
-         is_prime[std::slice(0, segment, 1)] = true;
-         // considering only odd integers. An odd number n corresponds to
-         // n-start/2 in the array.
--        for (unsigned index = 1; index < _primes.size()
--                                 and _primes[index] * _primes[index] <= finish;
--             ++index) {
-+
-+        // clang-format off
-+        for (unsigned index = 1; (index < _primes.size()) && (_primes[index] * _primes[index] <= finish); ++index) {
-+            // clang-format on
-             unsigned n = _primes[index];
-             unsigned multiple = (start / n + 1) * n;
-             if (multiple % 2 == 0)
 diff --git a/symengine/printers/stringbox.cpp b/symengine/printers/stringbox.cpp
 index afa1f115..af23b3e8 100644
 --- a/symengine/printers/stringbox.cpp
