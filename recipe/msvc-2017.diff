@@ -10,3 +10,14 @@ index 97ed4837..6ff989b4 100644
  
  namespace SymEngine
  {
+diff --git a/symengine/printers/stringbox.cpp b/symengine/printers/stringbox.cpp
+index afa1f115..af23b3e8 100644
+--- a/symengine/printers/stringbox.cpp
++++ b/symengine/printers/stringbox.cpp
+@@ -1,5 +1,6 @@
+ #include <iterator>
+ #include <sstream>
++#include <algorithm>
+ #include <symengine/printers/stringbox.h>
+ 
+ namespace SymEngine
