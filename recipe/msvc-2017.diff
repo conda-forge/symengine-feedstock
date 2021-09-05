@@ -1,0 +1,12 @@
+diff --git a/symengine/prime_sieve.cpp b/symengine/prime_sieve.cpp
+index 97ed4837..6ff989b4 100644
+--- a/symengine/prime_sieve.cpp
++++ b/symengine/prime_sieve.cpp
+@@ -1,6 +1,7 @@
+ #include <symengine/prime_sieve.h>
+ #include <cmath>
+ #include <valarray>
++#include <algorithm>
+ 
+ namespace SymEngine
+ {
