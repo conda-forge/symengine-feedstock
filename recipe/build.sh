@@ -21,6 +21,6 @@ cmake ${CMAKE_ARGS} \
 cmake --build . -- -j${CPU_COUNT}
 cmake --build . --target install
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 ctest
 fi

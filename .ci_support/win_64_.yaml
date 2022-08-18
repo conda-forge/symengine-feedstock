@@ -7,7 +7,7 @@ channel_targets:
 cxx_compiler:
 - vs2017
 libflint:
-- '2.8'
+- '2.9'
 mpfr:
 - '4'
 pin_run_as_build:
