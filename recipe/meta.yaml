@@ -25,7 +25,7 @@ requirements:
     - mpir             # [win]
     - mpfr
     - mpc
-    - llvmdev
+    - llvmdev <14
     - zlib
     - libflint
   run:
