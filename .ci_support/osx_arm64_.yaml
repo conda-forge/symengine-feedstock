@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '13'
+- '14'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '13'
+- '14'
 gmp:
 - '6'
 libflint:
@@ -20,13 +20,6 @@ macos_machine:
 - arm64-apple-darwin20.0.0
 mpfr:
 - '4'
-pin_run_as_build:
-  gmp:
-    max_pin: x
-  mpfr:
-    max_pin: x
-  zlib:
-    max_pin: x.x
 target_platform:
 - osx-arm64
 zip_keys:
