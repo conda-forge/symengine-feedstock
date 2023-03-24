@@ -10,7 +10,7 @@ source:
   sha256: 9c007c99e9633f5549a55fa7a66ebcbcf9e04092eb55f7bb781c22b9cf0570c4
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
 
 requirements:
@@ -25,15 +25,11 @@ requirements:
     - mpir             # [win]
     - mpfr
     - mpc
-    - llvmdev <14
+    - libflint
+    - llvmdev
+    # llvm deps
     - zlib
-    - libflint
-  run:
-    - gmp              # [unix]
-    - mpir             # [win]
-    - mpfr
-    - mpc
-    - libflint
+    - zstd
 
 test:
   commands:
