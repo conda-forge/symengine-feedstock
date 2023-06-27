@@ -10,7 +10,7 @@ MINIFORGE_HOME=${MINIFORGE_HOME:-${HOME}/miniforge3}
 
 ( startgroup "Installing a fresh version of Miniforge" ) 2> /dev/null
 
-MINIFORGE_URL="https://github.com/conda-forge/miniforge/releases/latest/download"
+MINIFORGE_URL="https://github.com/conda-forge/miniforge/releases/download/23.1.0-2"
 MINIFORGE_FILE="Mambaforge-MacOSX-$(uname -m).sh"
 curl -L -O "${MINIFORGE_URL}/${MINIFORGE_FILE}"
 rm -rf ${MINIFORGE_HOME}
