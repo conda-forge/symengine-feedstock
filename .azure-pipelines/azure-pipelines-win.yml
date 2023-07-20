@@ -44,18 +44,21 @@ jobs:
 
     # Configure the VM
     - script: |
+        echo on
         call activate base
         setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
       displayName: conda-forge CI setup
 
     # Configure the VM.
     - script: |
+        echo on
         set "CI=azure"
         call activate base
         run_conda_forge_build_setup
       displayName: conda-forge build setup
 
     - script: |
+        echo on
         call activate base
         if EXIST LICENSE.txt (
           copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
