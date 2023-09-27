@@ -1,4 +1,4 @@
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 {% set maj_min = ".".join(version.split(".")[:2]) %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
-  sha256: 9c007c99e9633f5549a55fa7a66ebcbcf9e04092eb55f7bb781c22b9cf0570c4
+  sha256: c11f1e4c55d7de1a8f16315272c19b791c403aae521a75654e1e4e8435f1c94b
 
 build:
   number: 0
