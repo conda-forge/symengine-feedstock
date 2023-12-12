@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [[ "${target_platform}" == "linux-ppc64le" ]]; then
+  export CFLAGS="${CFLAGS//-fno-plt/}"
+  export CXXFLAGS="${CXXFLAGS//-fno-plt/}"
+fi
+
 mkdir build
 cd build
 
