@@ -15,7 +15,7 @@ cxx_compiler_version:
 gmp:
 - '6'
 libflint:
-- '2.9'
+- '3.0'
 macos_machine:
 - arm64-apple-darwin20.0.0
 mpfr:
