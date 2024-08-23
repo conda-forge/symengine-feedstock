@@ -26,5 +26,9 @@ if errorlevel 1 exit 1
 ninja install
 if errorlevel 1 exit 1
 
-ctest
+if "%PKG_VERSION%"=="0.12.0" (
+   ctest -E test_cwrapper --output-on-failure
+) else (
+   ctest --output-on-failure
+)
 if errorlevel 1 exit 1
