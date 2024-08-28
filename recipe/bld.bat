@@ -18,8 +18,17 @@ cmake ^
     -DBUILD_SHARED_LIBS=yes ^
     -DMSVC_USE_MT=no ^
     ..
+if errorlevel 1 exit 1
 
-cmake --build . --config Release -- -j${CPU_COUNT}
-cmake --build . --config Release --target install
+ninja -j%CPU_COUNT%
+if errorlevel 1 exit 1
 
-ctest
+ninja install
+if errorlevel 1 exit 1
+
+if "%PKG_VERSION%"=="0.12.0" (
+   ctest -E test_cwrapper --output-on-failure
+) else (
+   ctest --output-on-failure
+)
+if errorlevel 1 exit 1

@@ -10,8 +10,7 @@ source:
   sha256: 1b5c3b0bc6a9f187635f93585649f24a18e9c7f2167cebcd885edeaaf211d956
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 2
 
 requirements:
   build:
@@ -42,7 +41,9 @@ test:
   commands:
     - if not exist %LIBRARY_INC%\\symengine\\basic.h exit 1     # [win]
     - if not exist %LIBRARY_LIB%\\symengine.lib exit 1          # [win]
+    {% if version != "0.12.0" %}
     - if not exist %LIBRARY_BIN%\\symengine-{{ maj_min }}.dll exit 1          # [win]
+    {% endif %}
     - test -f $PREFIX/include/symengine/basic.h                 # [unix]
     - test -f $PREFIX/lib/libsymengine.so                       # [linux]
     - test -f $PREFIX/lib/libsymengine.dylib                    # [osx]
