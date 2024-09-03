@@ -10,7 +10,7 @@ source:
   sha256: f46bcf037529cd1a422369327bf360ad4c7d2b02d0f607a62a5b09c74a55bb59
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,8 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - gmp              # [unix]
-    - mpir             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
@@ -31,8 +30,7 @@ requirements:
     - zstd
     - zlib
   run:
-    - gmp              # [unix]
-    - mpir             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
