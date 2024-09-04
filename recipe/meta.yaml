@@ -25,6 +25,7 @@ requirements:
     - mpfr
     - mpc
     - libflint
+    - winpthreads-devel   # [win]
     - llvmdev <17
     # these two come from LLVM
     - zstd
