@@ -21,18 +21,17 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - gmp              # [unix]
-    - gmp             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
+    - winpthreads-devel   # [win]
     - llvmdev <17
     # these two come from LLVM
     - zstd
     - zlib
   run:
-    - gmp              # [unix]
-    - gmp             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
