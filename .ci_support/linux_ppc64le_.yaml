@@ -21,7 +21,7 @@ docker_image:
 gmp:
 - '6'
 libflint:
-- '3.0'
+- '3.1'
 mpfr:
 - '4'
 target_platform:
