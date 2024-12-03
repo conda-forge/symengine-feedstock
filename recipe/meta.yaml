@@ -12,7 +12,7 @@ source:
     - fmpz_gmp.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage("symengine", max_pin="x.x") }}
 
