@@ -1,0 +1,20 @@
+commit 31627f52ab822f4ed3b642709d29a52cd4e83f4e
+Author: Isuru Fernando <isuruf@gmail.com>
+Date:   Mon Dec 2 17:00:39 2024 -0800
+
+    avoid using mpz_init_set_si to support gmp on windows
+
+diff --git a/symengine/flint_wrapper.h b/symengine/flint_wrapper.h
+index ade419088..6b4d5c96b 100644
+--- a/symengine/flint_wrapper.h
++++ b/symengine/flint_wrapper.h
+@@ -241,7 +241,8 @@ public:
+     mpz_view_flint(const fmpz_wrapper &i)
+     {
+         if (!COEFF_IS_MPZ(*i.get_fmpz_t())) {
+-            mpz_init_set_si(m, *i.get_fmpz_t());
++            mpz_init(m);
++            fmpz_get_mpz(m, i.get_fmpz_t());
+         } else {
+             ptr = COEFF_TO_PTR(*i.get_fmpz_t());
+         }
