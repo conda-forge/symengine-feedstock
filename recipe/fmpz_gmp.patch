@@ -14,7 +14,7 @@ index ade419088..6b4d5c96b 100644
          if (!COEFF_IS_MPZ(*i.get_fmpz_t())) {
 -            mpz_init_set_si(m, *i.get_fmpz_t());
 +            mpz_init(m);
-+            fmpz_get_mpz(m, *i.get_fmpz_t());
++            fmpz_get_mpz(m, i.get_fmpz_t());
          } else {
              ptr = COEFF_TO_PTR(*i.get_fmpz_t());
          }
