@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/symengine/symengine/releases/download/v{{ version }}/symengine-{{ version }}.tar.gz
   sha256: f46bcf037529cd1a422369327bf360ad4c7d2b02d0f607a62a5b09c74a55bb59
+  patches:
+    - fmpz_gmp.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -21,18 +23,17 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
-    - gmp              # [unix]
-    - mpir             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
+    - winpthreads-devel   # [win]
     - llvmdev <17
     # these two come from LLVM
     - zstd
     - zlib
   run:
-    - gmp              # [unix]
-    - mpir             # [win]
+    - gmp
     - mpfr
     - mpc
     - libflint
