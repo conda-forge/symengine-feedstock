@@ -17,6 +17,7 @@ cmake ^
     -DBUILD_FOR_DISTRIBUTION=yes ^
     -DBUILD_SHARED_LIBS=yes ^
     -DMSVC_USE_MT=no ^
+    -DWITH_LLVM_DYLIB=no ^
     ..
 if errorlevel 1 exit 1
 
