@@ -21,6 +21,7 @@ cmake ${CMAKE_ARGS} \
     -DWITH_LLVM=yes \
     -DBUILD_FOR_DISTRIBUTION=yes \
     -DBUILD_SHARED_LIBS=yes \
+    -DWITH_LLVM_DYLIB=no \
     ..
 
 cmake --build . -- -j${CPU_COUNT}
