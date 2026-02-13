@@ -1,5 +1,5 @@
 c_compiler:
-- vs2019
+- vs2022
 c_stdlib:
 - vs
 channel_sources:
@@ -7,11 +7,11 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 gmp:
 - '6'
 libflint:
-- '3.2'
+- '3.3'
 mpfr:
 - '4'
 target_platform:
