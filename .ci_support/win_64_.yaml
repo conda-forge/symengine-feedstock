@@ -11,7 +11,7 @@ cxx_compiler:
 gmp:
 - '6'
 libflint:
-- '3.3'
+- '3.5'
 mpfr:
 - '4'
 target_platform:
