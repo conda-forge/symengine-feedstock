@@ -1,6 +1,3 @@
-mkdir build
-cd build
-
 set "CXXFLAGS="
 
 cmake ^
@@ -18,11 +15,11 @@ cmake ^
     -DBUILD_SHARED_LIBS=yes ^
     -DMSVC_USE_MT=no ^
     -DWITH_LLVM_DYLIB=no ^
-    ..
+    -B build .
 if errorlevel 1 exit 1
 
-ninja install -j%CPU_COUNT%
+cmake --build build --target install -j%CPU_COUNT%
 if errorlevel 1 exit 1
 
-ctest --output-on-failure
+ctest --test-dir build --output-on-failure
 if errorlevel 1 exit 1

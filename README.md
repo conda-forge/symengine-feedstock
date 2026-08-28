@@ -9,6 +9,8 @@ Package license: MIT
 
 Summary: SymEngine is a fast symbolic manipulation library, written in C++
 
+Documentation: https://symengine.org/
+
 Current build status
 ====================
 
@@ -38,6 +40,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1983&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/symengine-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1983&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/symengine-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -215,4 +224,5 @@ Feedstock Maintainers
 
 * [@certik](https://github.com/certik/)
 * [@isuruf](https://github.com/isuruf/)
+* [@jschueller](https://github.com/jschueller/)
 

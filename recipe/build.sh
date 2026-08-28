@@ -5,7 +5,7 @@ if [[ "${target_platform}" == "linux-ppc64le" ]]; then
   export CXXFLAGS="${CXXFLAGS//-fno-plt/}"
 fi
 
-cmake ${CMAKE_ARGS} \
+cmake ${CMAKE_ARGS} -G Ninja \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \

@@ -1,0 +1,62 @@
+context:
+  version: "0.15.0"
+  maj_min: ${{ (version | split('.'))[:2] | join('.') }}
+ 
+package:
+  name: symengine
+  version: ${{ version }}
+
+source:
+  url: https://github.com/symengine/symengine/releases/download/v${{ version }}/symengine-${{ version }}.tar.gz
+  sha256: 9f75f0367221abd88b9b60ef7b104b4aa1e34e99d3152c3df2bb2467bad2f04f
+  patches:
+    # series.h(235): error C2676: binary '/=': 'Poly' does not define this operator
+    - poly.patch
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - cmake
+    - ninja
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+  host:
+    - gmp
+    - mpfr
+    - mpc
+    - libflint
+    - llvmdev
+    # these two come from LLVM
+    - zstd
+    - zlib
+    - if: win
+      then: winpthreads-devel
+  run_exports:
+    - ${{ pin_subpackage('symengine', upper_bound='x.x') }}
+
+tests:
+  - package_contents:
+      include:
+        - symengine/basic.h
+      lib:
+        - if: unix
+          then: symengine
+      bin:
+        - if: win
+          then: symengine-${{ maj_min }}.dll
+
+about:
+  homepage: https://github.com/symengine/symengine
+  license: MIT
+  license_file: LICENSE
+  summary: SymEngine is a fast symbolic manipulation library, written in C++
+  documentation: https://symengine.org/
+
+extra:
+  recipe-maintainers:
+    - certik
+    - isuruf
+    - jschueller
